@@ -7,18 +7,16 @@ on:
 
 jobs:
   cuicui:
+    env:
+      WX_PUSHER_TOKEN: ${{ secrets.WX_PUSHER_TOKEN }}
+      WX_UID: ${{ secrets.WX_UID }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
       - name: 'Install node'
         uses: actions/setup-node@v1
       - name: 'Run code'
-        run:
-          - node main.js --test=$WX_PUSHER_TOKEN
-          - echo $WX_PUSHER_TOKEN
-          - echo ${{ secrets.WX_PUSHER_TOKEN }}
-          - echo "dsf"
-          - echo ${{ secrets.wx.WX_PUSHER_TOKEN }}
+        run: node main.js --test=$WX_PUSHER_TOKEN
         env:
           WX_PUSHER_TOKEN: ${{ secrets.WX_PUSHER_TOKEN }}
           WX_UID: ${{ secrets.WX_UID }}
