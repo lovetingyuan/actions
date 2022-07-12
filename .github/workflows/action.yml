@@ -1,9 +1,9 @@
-name: 'GitHub Actions Weather Bot'
+name: 'GitHub Actions CuiCui Bot'
 
 on:
   push:
   schedule:
-    - cron: '0 */5 * * * ?'
+    - cron: '*/5 * * * *'
 
 jobs:
   cuicui:
