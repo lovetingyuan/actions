@@ -44,5 +44,11 @@ if (process.argv.includes('--test')) {
     process.exit(-1);
   });
 }
-
-console.log(22222, process.env.WX_PUSHER_TOKEN);
+const a = process.env['WX_PUSHER_TOKEN'];
+console.log(333, a);
+console.log(
+  22222,
+  process.env,
+  typeof process.env.WX_PUSHER_TOKEN,
+  process.env.WX_PUSHER_TOKEN.length
+);
