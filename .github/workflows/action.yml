@@ -15,5 +15,5 @@ jobs:
       - name: 'Run code'
         run: node main.js --test=$WX_PUSHER_TOKEN
         env:
-          WX_PUSHER_TOKEN: ${{ secrets.WX_PUSHER_TOKEN }}
-          WX_UID: ${{ secrets.WX_UID }}
+          WX_PUSHER_TOKEN: ${{ wx.WX_PUSHER_TOKEN }}
+          WX_UID: ${{ wx.WX_UID }}
