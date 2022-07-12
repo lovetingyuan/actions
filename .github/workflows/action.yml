@@ -16,7 +16,7 @@ jobs:
       - name: 'Install node'
         uses: actions/setup-node@v1
       - name: 'Run 3423'
-        run: echo ${{ secrets.WX_PUSHER_TOKEN }}
+        run: echo ${{ secrets.wx.WX_PUSHER_TOKEN }}
       - name: 'Run code'
         run: node main.js --test=$WX_PUSHER_TOKEN
         env:
