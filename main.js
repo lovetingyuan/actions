@@ -1,5 +1,8 @@
 const https = require('https');
-console.log(process.env);
+const fs = require('fs');
+const path = require('path');
+const file = fs.existsSync(path.join(__dirname, './.env'));
+console.log(3333, file);
 function get(url) {
   const { promise, resolve, reject } = new (function () {
     this.promise = new Promise((resolve, reject) => {
