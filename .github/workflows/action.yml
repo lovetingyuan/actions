@@ -7,9 +7,6 @@ on:
 
 jobs:
   cuicui:
-    env:
-      WX_PUSHER_TOKEN: ${{ secrets.WX_PUSHER_TOKEN }}
-      WX_UID: ${{ secrets.WX_UID }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
