@@ -1,5 +1,5 @@
 const https = require('https');
-
+console.log(process.env);
 function get(url) {
   const { promise, resolve, reject } = new (function () {
     this.promise = new Promise((resolve, reject) => {
