@@ -76,6 +76,7 @@ function main() {
     }
     const { liveStatus, url, title } = data.data.live_room;
     if (liveStatus) {
+      console.log('----------', title, url);
       return pushMessage(title, url);
     }
   });
