@@ -1,4 +1,3 @@
-console.log(process.env, process.argv);
 const { get, post } = require('./request');
 
 function main() {
@@ -7,7 +6,6 @@ function main() {
       return pushMessage(data.message);
     }
     const { liveStatus, url, title } = data.data.live_room;
-    console.log('----------', title, url);
     if (liveStatus) {
       return pushMessage(title, url);
     }
@@ -46,3 +44,5 @@ if (process.argv.includes('--test')) {
     process.exit(-1);
   });
 }
+
+console.log(22222, process.env.WX_PUSHER_TOKEN);
