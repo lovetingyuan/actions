@@ -69,19 +69,15 @@ function post(url, data) {
 }
 
 function main() {
-  return get('https://api.bilibili.com/x/space/acc/info?mid=1458143131&jsonp=jsonp')
-    .then(data => {
-      if (data.code) {
-        return pushMessage(data.message);
-      }
-      const { liveStatus, url, title } = data.data.live_room;
-      if (liveStatus) {
-        return pushMessage(title, url);
-      }
-    })
-    .catch(err => {
-      console.error(err);
-    });
+  return get('https://api.bilibili.com/x/space/acc/info?mid=1458143131&jsonp=jsonp').then(data => {
+    if (data.code) {
+      return pushMessage(data.message);
+    }
+    const { liveStatus, url, title } = data.data.live_room;
+    if (liveStatus) {
+      return pushMessage(title, url);
+    }
+  });
 }
 
 function pushMessage(title, url = '') {
@@ -105,7 +101,13 @@ function pushMessage(title, url = '') {
   });
 }
 if (process.argv.includes('--test')) {
-  pushMessage('test hehehe');
+  pushMessage('test hehehe').catch(err => {
+    console.error(err);
+    process.exit(-1);
+  });
 } else {
-  main();
+  main().catch(err => {
+    console.error(err);
+    process.exit(-1);
+  });
 }
