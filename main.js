@@ -1,8 +1,6 @@
 const https = require('https');
-const fs = require('fs');
-const path = require('path');
-let dotenvPath = path.resolve(process.cwd(), '.env');
-console.log(3333, fs.existsSync(dotenvPath));
+console.log(process.env);
+
 function get(url) {
   const { promise, resolve, reject } = new (function () {
     this.promise = new Promise((resolve, reject) => {
