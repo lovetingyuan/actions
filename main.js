@@ -95,7 +95,7 @@ function pushMessage(title, url = '') {
     // ],
     uids: [
       //发送目标的UID，是一个数组。注意uids和topicIds可以同时填写，也可以只填写一个。
-      'UID_oqhRu2cTBz2izerdmL17Vm0hRnHw',
+      process.env.WX_UID,
     ],
     url, //原文链接，可选参数
   }).then(res => {

@@ -3,10 +3,10 @@ name: 'GitHub Actions Weather Bot'
 on:
   push:
   schedule:
-    - cron: '* 0/5 * * * ?'
+    - cron: '* 0/5 * * *'
 
 jobs:
-  bot:
+  cuicui:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
