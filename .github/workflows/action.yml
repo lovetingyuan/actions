@@ -1,0 +1,19 @@
+name: 'GitHub Actions Weather Bot'
+
+on:
+  push:
+  schedule:
+    - cron: '0 14 * * *'
+
+jobs:
+  bot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: 'Install node'
+        uses: actions/setup-node@v1
+      - name: 'Run code'
+        run: node main.js --test
+        env:
+          WX_PUSHER_TOKEN: ${{ secrets.WX_PUSHER_TOKEN }}
+          WX_UID: ${{ secrets.WX_UID }}
