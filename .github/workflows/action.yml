@@ -15,10 +15,9 @@ jobs:
       - uses: actions/checkout@v1
       - name: 'Install node'
         uses: actions/setup-node@v1
-      - name: 'Run 3423'
-        run: echo ${{ secrets.WX_PUSHER_TOKEN }}
       - name: 'Run code'
-        run: node main.js --test
+        run: node main.js
         env:
           WX_PUSHER_TOKEN: ${{ secrets.WX_PUSHER_TOKEN }}
           WX_UID: ${{ secrets.WX_UID }}
+          UP_ID: ${{ secrets.UP_ID }}
