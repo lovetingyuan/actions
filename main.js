@@ -38,8 +38,11 @@ function pushMessage(title, url = '') {
     }
   });
 }
-
-main().catch(err => {
-  console.error(err);
-  process.exit(-1);
-});
+if (process.argv.includes('--test')) {
+  pushMessage('this is a test message');
+} else {
+  main().catch(err => {
+    console.error(err);
+    process.exit(-1);
+  });
+}
