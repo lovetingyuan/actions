@@ -39,7 +39,7 @@ function pushMessage(title, url = '') {
   });
 }
 if (process.argv.includes('--test')) {
-  pushMessage('this is a test message.');
+  pushMessage('This is a test message.');
 } else {
   main().catch(err => {
     console.error(err);
